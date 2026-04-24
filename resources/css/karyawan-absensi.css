@@ -1,0 +1,81 @@
+/* resources/css/karyawan-absensi.css */
+
+.absensi-main-card {
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border-radius: 8px; /* Sedikit lengkungan di sudut luar */
+    overflow: hidden;
+}
+
+.card-header-teal {
+    background-color: #00acc1;
+    padding: 0.75rem 1rem;
+}
+
+.camera-viewport {
+    background-color: #D9D9D9;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.camera-viewport i {
+    font-size: 5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.btn-absensi {
+    background-color: #00acc1;
+    color: white;
+    padding: 0.8rem 3rem;
+    border-radius: 9999px; /* Pill shape */
+    font-weight: 800;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 172, 193, 0.3);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-absensi:hover {
+    background-color: #00838f;
+    transform: scale(1.03);
+}
+
+/* Bagian Ringkasan Bawah */
+.summary-container {
+    margin-top: 2.5rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.summary-header {
+    background-color: #E5E7EB;
+    padding: 0.6rem;
+    border-radius: 20px 20px 0 0;
+    font-weight: 900;
+    text-align: center;
+    color: #4b5563;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.summary-body {
+    background-color: #D9D9D9;
+    padding: 1.5rem;
+    border-radius: 0 0 20px 20px;
+}
+
+.summary-row {
+    display: flex;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #1a1a1a;
+    margin-bottom: 0.75rem;
+}

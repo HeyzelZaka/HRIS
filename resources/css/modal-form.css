@@ -1,0 +1,46 @@
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none; /* Sembunyi dulu */
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 32px;
+    padding: 40px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.form-group label {
+    display: block;
+    font-size: 10px;
+    font-weight: 900;
+    color: #9ca3af;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 20px;
+    background: #f9fafb;
+    border: 2px solid #f3f4f6;
+    border-radius: 16px;
+    font-weight: 700;
+    transition: all 0.3s;
+}
+
+.form-input:focus {
+    border-color: #00acc1;
+    outline: none;
+    background: white;
+}

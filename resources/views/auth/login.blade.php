@@ -24,19 +24,20 @@
 
             <input type="hidden" name="role" id="selected-role" value="user">
 
-            <form action="#" method="POST">
-                @csrf
+            <form action="{{ route('dashboard') }}" method="GET">
+    @csrf
                 <input type="email" class="input-box" placeholder="email" required>
                 <input type="password" class="input-box" placeholder="password" required>
                 
                 <button type="submit" class="btn-login">
-                    <span>➜</span> LOGIN
+                     <span>➜</span> LOGIN
                 </button>
                 <div style="margin-top: 15px;">
                     <a href="{{ route('register') }}" style="color: #00acc1; font-weight: bold; text-decoration: none;">
                          Daftar sekarang
                     </a>
                 </div>
+            
             </form>
 
         </div>

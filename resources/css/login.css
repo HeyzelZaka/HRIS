@@ -1,0 +1,93 @@
+/* resources/css/login.css */
+:root {
+    --hris-teal: #00acc1;
+    --hris-dark: #1a1a1a;
+}
+
+body {
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0;
+}
+
+.login-container {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 3.5rem;
+    border-radius: 48px;
+    box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-group i {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    transition: color 0.3s;
+}
+
+.login-input {
+    width: 100%;
+    padding: 1.2rem 1.2rem 1.2rem 3.5rem;
+    background: #f9fafb;
+    border: 2px solid #f3f4f6;
+    border-radius: 24px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+    transition: all 0.3s;
+}
+
+.login-input:focus {
+    border-color: var(--hris-teal);
+    background: white;
+    box-shadow: 0 10px 20px -5px rgba(0, 172, 193, 0.1);
+    outline: none;
+}
+
+.login-input:focus + i {
+    color: var(--hris-teal);
+}
+
+.btn-login {
+    width: 100%;
+    padding: 1.2rem;
+    background: var(--hris-teal);
+    color: white;
+    border-radius: 24px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 15px 30px -5px rgba(0, 172, 193, 0.3);
+    transition: all 0.3s;
+}
+
+.btn-login:hover {
+    background: #00838f;
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px -5px rgba(0, 172, 193, 0.4);
+}

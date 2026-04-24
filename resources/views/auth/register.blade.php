@@ -17,15 +17,17 @@
             
             <h2 class="login-title">REGISTER</h2>
 
-            <form action="#" method="POST">
-                @csrf
-                <input type="email" name="email" class="input-box" placeholder="masukan email" required>
-                <input type="password" name="password" class="input-box" placeholder="masukan password" required>
-                <input type="password" name="password_confirmation" class="input-box" placeholder="ulangi password" required>
-                
-                <button type="submit" class="btn-login">
-                    <span>➜</span> Register
-                </button>
+            <form action="{{ route('login') }}" method="GET">
+              @csrf
+    
+             <input type="email" name="email" class="input-box" placeholder="masukan email" required>
+             <input type="password" name="password" class="input-box" placeholder="masukan password" required>
+             <input type="password" name="password_confirmation" class="input-box" placeholder="ulangi password" required>
+    
+          <button type="submit" class="btn-login">
+        <span>➜</span> Register
+      </button>
+</form>
 
         <div style="margin-top: 20px;">
             <p style="color: white; font-size: 13px; opacity: 0.9;">

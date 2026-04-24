@@ -1,0 +1,98 @@
+
+:root {
+    --hris-teal: #00acc1;
+    --hris-bg: #F8FAFC;
+}
+
+body {
+    background-color: var(--hris-bg);
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* Sidebar Styling */
+.sidebar-fixed {
+    width: 288px; /* Sama dengan w-72 */
+    background-color: var(--hris-teal);
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 50;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.05);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.logo-icon {
+    width: 48px;
+    height: 48px;
+    background-color: white;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--hris-teal);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Links */
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.nav-item.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+/* Main Content Area */
+.content-wrapper {
+    margin-left: 288px; /* Memberi ruang agar tidak tertutup sidebar */
+    padding: 3rem;
+    flex: 1;
+}
+
+/* User Header Profile */
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.avatar-box {
+    width: 48px;
+    height: 48px;
+    background-color: #e5e7eb;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    overflow: hidden;
+    border: 2px solid white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}

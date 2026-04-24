@@ -1,0 +1,75 @@
+
+
+.hris-table-container {
+    background: #ffffff;
+    border-radius: 32px;
+    border: 1px solid #f3f4f6;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.hris-table thead tr {
+    background-color: rgba(249, 250, 251, 0.5);
+}
+
+.hris-table th {
+    padding: 20px 32px;
+    font-size: 10px;
+    font-weight: 900;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.hris-table td {
+    padding: 20px 32px;
+    font-size: 14px;
+    border-bottom: 1px solid #f9fafb;
+    transition: all 0.3s ease;
+}
+
+.hris-table tbody tr:hover td {
+    background-color: rgba(249, 250, 251, 0.8);
+}
+
+/* Badge Status */
+.badge-status-active {
+    padding: 4px 12px;
+    background-color: #dcfce7;
+    color: #16a34a;
+    border-radius: 8px;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+/* Tombol Aksi */
+.btn-action-group {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-action-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background-color: #f3f4f6;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-action-icon:hover {
+    background-color: #00acc1;
+    color: white;
+}
+
+.btn-action-icon.delete:hover {
+    background-color: #ef4444;
+}
