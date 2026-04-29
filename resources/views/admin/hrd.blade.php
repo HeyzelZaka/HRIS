@@ -20,14 +20,17 @@
                 <tr>
                     <th>ID</th>
                     <th>Nama HRD</th>
+                    <th class="text-center">Email</th>
                     <th class="text-center">Status</th>
                     <th class="text-center">Aksi</th>
                 </tr>
             </thead>
             <tbody>
+                @foreach($hrds as $hrd)
                 <tr>
-                    <td class="font-bold text-gray-400">1</td>
-                    <td class="font-black text-gray-700">Toni Sucipto</td>
+                    <td class="font-bold text-gray-400">{{ $hrd->id }}</td>
+                    <td class="font-black text-gray-700">{{ $hrd->name }}</td>
+                    <td class="text-center text-gray-500">{{ $hrd->email }}</td>
                     <td class="text-center">
                         <span class="badge-hrd">Aktif</span>
                     </td>
@@ -38,19 +41,7 @@
                         </div>
                     </td>
                 </tr>
-                <tr>
-                    <td class="font-bold text-gray-400">2</td>
-                    <td class="font-black text-gray-700">Bambang Pamungkas</td>
-                    <td class="text-center">
-                        <span class="badge-hrd">Aktif</span>
-                    </td>
-                    <td>
-                        <div class="flex justify-center gap-2">
-                            <button class="w-8 h-8 rounded-lg bg-gray-100 text-gray-500 hover:bg-hris-teal hover:text-white transition-all"><i class="fas fa-edit text-xs"></i></button>
-                            <button class="w-8 h-8 rounded-lg bg-gray-100 text-gray-500 hover:bg-red-500 hover:text-white transition-all"><i class="fas fa-trash text-xs"></i></button>
-                        </div>
-                    </td>
-                </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

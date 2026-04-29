@@ -4,12 +4,12 @@
 <div class="space-y-10">
     <div class="bg-white p-10 rounded-[40px] shadow-sm border border-gray-100 flex justify-between items-center relative overflow-hidden">
         <div class="relative z-10">
-            <h1 class="text-3xl font-black text-gray-800 tracking-tight">Selamat Datang, Priska! 👋</h1>
-            <p class="text-gray-400 font-bold text-sm mt-2 uppercase tracking-widest">Operator Produksi • Shift Pagi</p>
+            <h1 class="text-3xl font-black text-gray-800 tracking-tight">Selamat Datang, {{ $user->name }}! 👋</h1>
+            <p class="text-gray-400 font-bold text-sm mt-2 uppercase tracking-widest">{{ $user->jabatan ?? 'Pegawai' }} • Shift {{ $user->shift ?? 'Pagi' }}</p>
         </div>
         <div class="text-right relative z-10">
             <div id="clock" class="text-4xl font-black text-[#00acc1] tabular-nums tracking-tighter">00:00:00</div>
-            <p class="text-xs font-bold text-gray-400 uppercase mt-1 tracking-widest">Kamis, 23 April 2026</p>
+            <p class="text-xs font-bold text-gray-400 uppercase mt-1 tracking-widest">{{ \Carbon\Carbon::now()->translatedFormat('l, d F Y') }}</p>
         </div>
         <div class="absolute -right-10 -top-10 w-40 h-40 bg-[#00acc1]/5 rounded-full"></div>
     </div>
@@ -22,7 +22,7 @@
                 </div>
                 <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Bulan Ini</span>
             </div>
-            <div class="text-3xl font-black text-gray-800">20 / 22</div>
+            <div class="text-3xl font-black text-gray-800">{{ $totalKehadiran }} Hari</div>
             <p class="text-xs font-bold text-gray-400 mt-1 uppercase">Total Kehadiran</p>
         </div>
 
@@ -33,11 +33,11 @@
                 </div>
                 <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Tersisa</span>
             </div>
-            <div class="text-3xl font-black text-gray-800">12 Hari</div>
+            <div class="text-3xl font-black text-gray-800">{{ $sisaCuti }} Hari</div>
             <p class="text-xs font-bold text-gray-400 mt-1 uppercase">Jatah Cuti Tahunan</p>
         </div>
 
-        <div class="bg-white p-8 rounded-[40px] shadow-sm border-b-8 border-purple-400">
+        <a href="{{ route('karyawan.gaji.index') }}" class="bg-white p-8 rounded-[40px] shadow-sm border-b-8 border-purple-400 hover:shadow-xl transition-all">
             <div class="flex justify-between items-start mb-6">
                 <div class="w-12 h-12 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-500">
                     <i class="fas fa-file-invoice-dollar"></i>
@@ -45,26 +45,32 @@
                 <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Status</span>
             </div>
             <div class="text-xl font-black text-gray-800 uppercase">SUDAH TERBIT</div>
-            <p class="text-xs font-bold text-gray-400 mt-1 uppercase">Gaji April 2026</p>
-        </div>
+            <p class="text-xs font-bold text-gray-400 mt-1 uppercase">Gaji {{ \Carbon\Carbon::now()->translatedFormat('F Y') }}</p>
+        </a>
     </div>
 
     <div class="bg-white p-10 rounded-[40px] shadow-sm border border-gray-100">
         <h3 class="text-lg font-black text-gray-800 uppercase tracking-tight mb-8">Riwayat Presensi Terbaru</h3>
         <div class="space-y-4">
+            @forelse($riwayatTerbaru as $riwayat)
             <div class="flex items-center justify-between p-6 bg-gray-50 rounded-3xl border border-gray-100 group hover:bg-[#00acc1]/5 transition-all">
                 <div class="flex items-center gap-6">
-                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    <div class="w-3 h-3 rounded-full {{ $riwayat->status == 'hadir' ? 'bg-green-500' : ($riwayat->status == 'terlambat' ? 'bg-yellow-500' : 'bg-red-500') }}"></div>
                     <div>
                         <p class="text-sm font-black text-gray-700">Clock In - Masuk Kerja</p>
-                        <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Sesuai Jadwal</p>
+                        <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Status: {{ ucfirst($riwayat->status) }}</p>
                     </div>
                 </div>
                 <div class="text-right">
-                    <p class="text-sm font-black text-gray-700">08:02:15</p>
-                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Hari Ini</p>
+                    <p class="text-sm font-black text-gray-700">{{ $riwayat->jam_masuk ?? '-' }}</p>
+                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{{ \Carbon\Carbon::parse($riwayat->tanggal)->translatedFormat('d M Y') }}</p>
                 </div>
             </div>
+            @empty
+            <div class="text-center py-5">
+                <p class="text-gray-500 text-sm">Belum ada riwayat absensi.</p>
+            </div>
+            @endforelse
         </div>
     </div>
 </div>

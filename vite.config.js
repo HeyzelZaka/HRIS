@@ -16,7 +16,7 @@ export default defineConfig({
                 'resources/css/karyawan-absensi.css',
                 'resources/css/karyawan-profile.css', 
                 'resources/js/karyawan-profile.js',
-               'resources/css/karyawan.ajukan-cuti.css',
+            //    'resources/css/karyawan.ajukan-cuti.css',
                'resources/css/hrd-style.css',
 
             ],

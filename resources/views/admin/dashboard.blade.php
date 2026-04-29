@@ -10,7 +10,7 @@
             </div>
             <div class="bg-hris-gray-card p-10 flex-1 flex flex-col items-center justify-center relative">
                 <i class="fas fa-users absolute text-black/5 text-7xl group-hover:scale-125 transition-transform duration-500"></i>
-                <div class="text-7xl font-black text-hris-teal z-10 drop-shadow-sm">99</div>
+                <div class="text-7xl font-black text-hris-teal z-10 drop-shadow-sm">{{ $totalKaryawan }}</div>
             </div>
         </div>
 
@@ -20,7 +20,7 @@
             </div>
             <div class="bg-hris-gray-card p-10 flex-1 flex flex-col items-center justify-center relative">
                 <i class="fas fa-user-check absolute text-black/5 text-7xl group-hover:scale-125 transition-transform duration-500"></i>
-                <div class="text-7xl font-black text-hris-teal z-10 drop-shadow-sm">1</div>
+                <div class="text-7xl font-black text-hris-teal z-10 drop-shadow-sm">{{ $aktif }}</div>
             </div>
         </div>
 
@@ -30,7 +30,7 @@
             </div>
             <div class="bg-hris-gray-card p-10 flex-1 flex flex-col items-center justify-center relative">
                 <i class="fas fa-user-slash absolute text-black/5 text-7xl group-hover:scale-125 transition-transform duration-500"></i>
-                <div class="text-7xl font-black text-hris-teal z-10 drop-shadow-sm">98</div>
+                <div class="text-7xl font-black text-hris-teal z-10 drop-shadow-sm">{{ $sedangCuti }}</div>
             </div>
         </div>
     </div>
@@ -40,7 +40,7 @@
             <i class="fas fa-th-large text-hris-teal"></i> Menu Utama
         </h3>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <a href="#" class="p-6 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all group border-b-4 border-b-orange-400">
+            <a href="{{ route('admin.rekap_gaji') }}" class="p-6 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all group border-b-4 border-b-orange-400">
                 <div class="w-12 h-12 bg-orange-100 text-orange-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
                     <i class="fas fa-money-bill-wave text-xl"></i>
                 </div>
@@ -64,7 +64,7 @@
                 <p class="text-[10px] text-gray-400 mt-1 uppercase font-bold tracking-widest">Konfirmasi Pengajuan</p>
             </a>
 
-            <a href="#" class="p-6 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all group border-b-4 border-b-red-400">
+            <a href="{{ route('admin.slip_gaji.index') }}" class="p-6 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all group border-b-4 border-b-red-400">
                 <div class="w-12 h-12 bg-red-100 text-red-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
                     <i class="fas fa-file-pdf text-xl"></i>
                 </div>
@@ -86,6 +86,9 @@
             </div>
         </div>
     </div>
+
+</div>
+@endsectionv>
 
 </div>
 @endsection
