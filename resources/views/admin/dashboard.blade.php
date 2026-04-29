@@ -37,7 +37,7 @@
 
     <div class="mt-12">
         <h3 class="text-gray-700 font-extrabold mb-6 flex items-center gap-2 tracking-tight uppercase text-sm">
-            <i class="fas fa-th-large text-hris-teal"></i> Modul Sistem
+            <i class="fas fa-th-large text-hris-teal"></i> Menu Utama
         </h3>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <a href="#" class="p-6 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all group border-b-4 border-b-orange-400">

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-{{-- Memanggil file CSS khusus yang sudah dipisah --}}
+
 @vite(['resources/css/karyawan-table.css'])
 
 <div class="min-h-full flex flex-col">
@@ -39,6 +39,7 @@
                             <button class="btn-action-icon delete" title="Hapus"><i class="fas fa-trash"></i></button>
                         </div>
                     </td>
+                    
                 </tr>
 
                 <tr>

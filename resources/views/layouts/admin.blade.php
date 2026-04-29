@@ -42,11 +42,12 @@
             
             <nav class="flex flex-col space-y-3 px-6 flex-1">
         
-             <a href="/admin/dashboard" 
-                class="flex items-center gap-4 py-3 px-6 rounded-full font-bold text-sm bg-white text-[#00acc1] shadow-md transition-all">
-                <i class="fas fa-th-large w-5"></i> 
-                <span>Dashboard</span>
-             </a>
+            <a href="/admin/dashboard" 
+               class="flex items-center gap-4 py-4 px-8 rounded-full font-bold text-sm transition-all duration-300
+              {{ Request::is('admin/dashboard*') ? 'bg-white text-[#00acc1] shadow-lg' : 'text-white hover:bg-white/10' }}">
+              <i class="fas fa-users w-6 text-center"></i> 
+              <span>Dashboard</span>
+               </a>
 
              <a href="/admin/karyawan" 
                class="flex items-center gap-4 py-4 px-8 rounded-full font-bold text-sm transition-all duration-300
